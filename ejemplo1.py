@@ -1,4 +1,4 @@
 print('hola')
 x='adios'
 
-print(x, 'puta')
+print(x, '')
