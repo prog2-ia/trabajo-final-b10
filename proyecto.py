@@ -37,7 +37,7 @@ class Evento:
 
 class Calendario:
     def __init__(self):
-        self.eventos = [] # Lista que guardará los eventos
+        self.eventos = [] # Lista que guarda los eventos
 
     def añadir_evento(self, evento):
         # Aquí deberías usar un 'try/except' para lanzar las excepciones
