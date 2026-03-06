@@ -13,6 +13,10 @@ class DeporteEquipo(Deporte):
         super().__init__(nombre, min_jugadores)
         self.duracion_oficial = duracion_oficial
 
+class Deporte_otro(Deporte):
+    def __init__(self, nombre, min_jugadores):
+        super().__init__(nombre,1)
+
 class Tarifa:
     def __init__(self, precio_hora):
         self.precio_hora = precio_hora
