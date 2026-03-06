@@ -45,7 +45,6 @@ class Calendario:
 
     def añadir_evento(self, evento):
         # Aquí deberías usar un 'try/except' para lanzar las excepciones
-        # si se supera el aforo o choca el horario.
         pass
 
     # SOBRECARGA: Sirve para COMBINAR calendarios (usando el símbolo + )
