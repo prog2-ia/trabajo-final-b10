@@ -8,6 +8,10 @@ class DeporteRaqueta(Deporte): # Así se hereda
         super().__init__(nombre, min_jugadores)
         self.necesita_red = necesita_red
 
+class DeporteEquipo(Deporte):
+    def __init__(self, nombre, min_jugadores,duracion_oficial):
+        super().__init__(nombre, min_jugadores)
+        self.duracion_oficial = duracion_oficial
 
 class Tarifa:
     def __init__(self, precio_hora):
