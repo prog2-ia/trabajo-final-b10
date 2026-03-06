@@ -25,7 +25,7 @@ class Pista:
         self.id_pista = id_pista
         self.aforo_max = aforo_max
         self.deporte = deporte
-        self.estado = "Disponible" # Puede ser "Ocupada", "Mantenimiento"..
+        self.estado = "Disponible" # Puede ser "Ocupada", "Mantenimiento" o otras
 
 class Evento:
     def __init__(self, id_evento, pista, num_jugadores, prioridad):
