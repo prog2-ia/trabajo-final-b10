@@ -1,3 +1,6 @@
+from abc import abstractmethod
+
+
 class Deporte:
     def __init__(self, nombre, min_jugadores):
         self.nombre = nombre
@@ -24,12 +27,41 @@ class Tarifa:
     def calcular_precio(self, horas):
         return self.precio_hora * horas
 
-class Pista:
+
+
+
+class Pista(ABC):
     def __init__(self, id_pista, aforo_max, deporte):
         self.id_pista = id_pista
         self.aforo_max = aforo_max
         self.deporte = deporte
         self.estado = "Disponible" # Puede ser "Ocupada", "Mantenimiento"
+
+    @property
+    def id_pista(self):
+        return self.id_pista
+
+    @property
+    def estado(self):
+        return self._estado
+
+    @estado.setter
+    def estado(self, valor):
+        self._estado = valor
+    @abstractmethod
+    def descripcion(self):
+        pass
+    def __str__(self):
+        return f"Pista {self._id_pista} | {self._deporte.nombre} | Estado: {self._estado}"
+
+class PistaInterior(Pista):
+    def descripcion(self):
+        return "Pista cubierta con iluminación artificial y parqué."
+
+class PistaExterior(Pista):
+    def descripcion(self):
+        return "Pista al aire libre de cemento."
+
 
 class Evento:
     def __init__(self, id_evento, pista, num_jugadores, prioridad):
