@@ -6,6 +6,26 @@ class Deporte(ABC):
         self.nombre = nombre
         self.min_jugadores = min_jugadores
 
+
+    #Aplicamos dos property para poder leer el nombre y mínimo de jugadores ya que son atributos privados
+    @property
+    def nombre(self):
+        return self.nombre
+
+    @property
+    def min_jugadores(self):
+        return self.min_jugadores
+
+    #Aplicamos abstractmethod que tienen que cumplir todos los deportes
+    @abstractmethod
+    def obtener_restricciones(self):
+        pass
+
+    # Le meto esta función para imprimir los datos del deporte
+    def _str_(self):
+        return f"{self.nombre} (Min: {self.min_jugadores} jug.)"
+
+
 class DeporteRaqueta(Deporte): # Así se hereda
     def __init__(self, nombre, min_jugadores, necesita_red):
         super().__init__(nombre, min_jugadores)
