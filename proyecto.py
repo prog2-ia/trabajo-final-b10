@@ -1,4 +1,7 @@
-class Deporte:
+from abc import ABC, abstractmethod
+
+
+class Deporte(ABC):
     def __init__(self, nombre, min_jugadores):
         self.nombre = nombre
         self.min_jugadores = min_jugadores
