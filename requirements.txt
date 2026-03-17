@@ -1,0 +1,2 @@
+# El proyecto utiliza únicamente librerías estándar de Python (como abc).
+# No se requieren dependencias externas.
