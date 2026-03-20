@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 
 class Deporte(ABC): # Clase base que define la estructura común para todos los deportes
     def __init__(self, nombre, min_jugadores):
-        self.nombre = nombre
+        self._nombre = nombre
         self.min_jugadores = min_jugadores
 
     # Aplicamos dos property para poder leer el nombre y mínimo de jugadores ya que son atributos privados
