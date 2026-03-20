@@ -11,7 +11,7 @@ class Evento:
     def __lt__(self, otro_evento):
         return self.prioridad < otro_evento.prioridad
 
-    def _str_(self):
+    def __str__(self):
         tipo = "LIGA" if self.prioridad == 1 else "NORMAL"
         return f"{tipo} | Hora: {self.hora} | Pista {self.pista.id_pista} | A nombre de: {self.usuario.nombre}"
 
@@ -36,7 +36,7 @@ class Calendario:
 
 
     def mostrar(self):
-        print(f"\n--- CALENDARIO: {self.nombre_mes} ---")
+        print("-----CALENDARIO-----")
         if not self.eventos:
             print("No hay eventos programados.")
         for ev in self.eventos:

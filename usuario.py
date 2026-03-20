@@ -1,5 +1,5 @@
 class Usuario:
-    def _init_(self, dni, nombre):
+    def __init__(self, dni, nombre):
         self._dni = dni
         self._nombre = nombre
 
@@ -7,5 +7,5 @@ class Usuario:
     def nombre(self):
         return self._nombre
 
-    def _str_(self):
+    def __str__(self):
         return f"Usuario[{self._dni}] - {self.nombre}"
