@@ -2,7 +2,6 @@ from abc import ABC, abstractmethod
 
 
 class Deporte(ABC):
-
     def __init__(self, nombre, min_jugadores):
         self.nombre = nombre
         self.min_jugadores = min_jugadores
@@ -45,11 +44,28 @@ class Tarifa:
     def __init__(self, precio_hora):
         self.precio_hora = precio_hora
 
+    @property
+    def precio_hora(self):
+        return self._precio_hora
+
     def calcular_precio(self, horas):
-        return self.precio_hora * horas
+        return self._precio_hora * horas
+
+    def _str_(self):
+        return f"Tarifa {self._nombre}: {self._precio_hora}€/h"
 
 
+class Usuario:
+    def _init_(self, dni, nombre):
+        self._dni = dni
+        self._nombre = nombre
 
+    @property
+    def nombre(self):
+        return self._nombre
+
+    def _str_(self):
+        return f"Usuario[{self._dni}] - {self.nombre}"
 
 class Pista(ABC):
     def __init__(self, id_pista, aforo_max, deporte):
