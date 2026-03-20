@@ -7,7 +7,7 @@ Esta aplicación es un sistema de gestión por consola para un polideportivo. Pe
 ## Instalación y Requisitos
 El proyecto está desarrollado en Python y no requiere de librerías externas.
 Para ejecutarlo, simplemente clona el repositorio:
-`git clone [https://github.com/prog2-ia/trabajo-final-b10/blob/main/README.md?plain=1]`
+`git clone [https://github.com/prog2-ia/trabajo-final-b10]`
 
 ## Uso y Ejemplos
 Para iniciar el programa, ejecuta el archivo principal desde la terminal:
