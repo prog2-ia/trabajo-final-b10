@@ -1,5 +1,5 @@
 class Tarifa:
-    def __init__(self, precio_hora, nombre):
+    def __init__(self, nombre, precio_hora):
         self._precio_hora = precio_hora
         self._nombre = nombre
 
@@ -8,7 +8,7 @@ class Tarifa:
         return self._precio_hora
 
     def calcular_precio(self, horas):
-        return self._precio_hora * horas
+        return float(self._precio_hora) * horas
 
     def __str__(self):
         return f"Tarifa {self._nombre}: {self._precio_hora}€/h"
