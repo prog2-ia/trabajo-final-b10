@@ -1,24 +1,24 @@
 class Calendario:
 #almacena diferentes eventos
-    def __init__(self):
-        self.eventos = []
+    def __init__(self)->None:
+        self.eventos: List['Evento'] = []
 
-    def añadir_evento(self, evento):
+    def añadir_evento(self, evento:'Evento')->None:
         self.eventos.append(evento)
         # Al ordenar, se usa __lt__ de Evento
         self.eventos.sort()
 
     # Sobrecarga de operadores matemáticos: suma (+)
     # Permite fusionar dos calendarios en uno nuevo combinando sus listas
-    def __add__(self, otro_calendario):
-        nuevo_calendario = Calendario()
+    def __add__(self, otro_calendario:'Calendario')->'Calendario':
+        nuevo_calendario:'Calendario' = Calendario()
         nuevo_calendario.eventos = self.eventos + otro_calendario.eventos
         nuevo_calendario.eventos.sort()
         return nuevo_calendario
 
 
-    def mostrar(self):
-        print("-----CALENDARIO-----")
+    def mostrar(self)->None:
+        print("-----CALENDARIO-----") # muestra el calendario completo
         if not self.eventos:
             print("No hay eventos programados.")
         for ev in self.eventos:
