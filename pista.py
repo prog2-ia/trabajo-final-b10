@@ -2,41 +2,41 @@
 from abc import ABC, abstractmethod
 
 class Pista(ABC):
-    def __init__(self, id_pista, aforo_max, deporte):
+    def __init__(self, id_pista: str, aforo_max: int, deporte: 'Deporte') -> None:
         #Uso de _ para atributos privados/protegidos
-        self._id_pista = id_pista
-        self._aforo_max = aforo_max
-        self._deporte = deporte
-        self._estado = "Disponible" # Puede ser "Ocupada", "Mantenimiento"
+        self._id_pista:str = id_pista
+        self._aforo_max:int = aforo_max
+        self._deporte:'Deporte' = deporte
+        self._estado:str = "Disponible" # Puede ser "Ocupada", "Mantenimiento"
 
     @property
-    def id_pista(self):
+    def id_pista(self)->str:
         return self._id_pista
 
     @property
-    def estado(self):
+    def estado(self)->str:
         return self._estado
 
     @estado.setter
-    def estado(self, valor):
+    def estado(self, valor:str)->None:
         self._estado = valor
 
 # esto obligará a las clases hijas a implementar el polimorfismo (sobrescribir)
     @abstractmethod
-    def descripcion(self):
+    def descripcion(self)->str:
         pass
 
-    def __str__(self):
+    def __str__(self)->str:
         return f"Pista {self._id_pista} | {self._deporte.nombre} | Estado: {self._estado}"
 
 #PistaInterior hereda de Pista
 class PistaInterior(Pista):
     # aquí sobrescribimos el metodo de la clase padre
-    def descripcion(self):
+    def descripcion(self)->str:
         return "Pista cubierta con iluminación artificial y parqué."
 
 # PistaExterior hereda de Pista
 class PistaExterior(Pista):
     # Sobrescribimos el metodo de la clase padre
-    def descripcion(self):
+    def descripcion(self)->str:
         return "Pista al aire libre de cemento."
