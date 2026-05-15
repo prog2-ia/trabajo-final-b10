@@ -3,6 +3,10 @@ from abc import ABC, abstractmethod
 
 class Pista(ABC):
     def __init__(self, id_pista: str, aforo_max: int, deporte: 'Deporte') -> None:
+        # Validación para que el aforo tenga sentido físico
+        if aforo_max <= 0:
+            raise ValueError(f"El aforo máximo debe ser mayor que 0. Se recibió: {aforo_max}")
+
         #Uso de _ para atributos privados/protegidos
         self._id_pista:str = id_pista
         self._aforo_max:int = aforo_max

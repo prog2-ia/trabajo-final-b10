@@ -3,6 +3,10 @@ from abc import ABC, abstractmethod
 
 class Deporte(ABC): # Clase base que define la estructura común para todos los deportes
     def __init__(self, nombre:str, min_jugadores:int)->None:
+        # Validación centralizada: se aplica a todos los deportes que hereden de aquí
+        if min_jugadores <= 0:
+            raise ValueError(f"El mínimo de jugadores debe ser al menos 1. Se recibió: {min_jugadores}")
+
         self._nombre:str = nombre
         self._min_jugadores:int = min_jugadores
 
@@ -53,7 +57,7 @@ class DeporteEquipo(Deporte):
 # Clase para deportes que no encajan en las categorías anteriores
 class Deporte_otro(Deporte):
     def __init__(self, nombre:str, min_jugadores:int)->None:
-        super().__init__(nombre, 1)
+        super().__init__(nombre, min_jugadores)
 
     def obtener_restricciones(self) -> str:
         return "Aplicar restricciones generales de las instalaciones deportivas."
