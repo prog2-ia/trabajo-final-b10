@@ -54,7 +54,7 @@ class Calendario:
         for ev in self.eventos:
             print(ev)
 
-    def guardar_en_fichero(self, ruta_fichero: str = "datos_calendario.bin") -> None:
+    def guardar_en_fichero(self, ruta_fichero: str = "datos/datos_calendario.bin") -> None:
         """Guarda la lista de eventos en un fichero binario usando pickle."""
         # 'wb' significa Write Binary (escribir en binario)
         with open(ruta_fichero, 'wb') as fichero:
@@ -62,7 +62,7 @@ class Calendario:
         print(f" Datos guardados correctamente en '{ruta_fichero}'.")
 
 
-    def cargar_de_fichero(self, ruta_fichero: str = "datos_calendario.bin") -> None:
+    def cargar_de_fichero(self, ruta_fichero: str = "datos/datos_calendario.bin") -> None:
         """Carga la lista de eventos desde un fichero binario."""
         try:
             # 'rb' significa Read Binary (leer en binario)

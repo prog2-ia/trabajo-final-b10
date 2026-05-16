@@ -100,7 +100,7 @@ def main() -> None:
                     # cambiamos el estado para que no se pueda volver a reservar
                     pista_asignada.estado = "Ocupada"
                     # Implementación de fichero de texto plano (Modo 'a' para añadir sin borrar)
-                    with open("registro_reservas.txt", "a", encoding="utf-8") as f:
+                    with open("datos/registro_reservas.txt", "a", encoding="utf-8") as f:
                         f.write(f"Reserva: {nombre_ev} | Pista: {pista_asignada.id_pista} | Cliente: {usuario_actual.nombre} | Hora: {hora_ev}\n")
                     print(f"\nReserva '{nombre_ev}' creada a cargo de {usuario_actual}")
                     print()
