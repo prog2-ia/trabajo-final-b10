@@ -1,1 +1,1 @@
-# No se ha usado ninguna librería
+# No se ha usado ninguna librería, por ello no hay nada.
