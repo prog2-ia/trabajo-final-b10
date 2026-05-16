@@ -1,5 +1,6 @@
 # pistas.py
 from abc import ABC, abstractmethod
+from deporte import Deporte
 
 class Pista(ABC):
     def __init__(self, id_pista: str, aforo_max: int, deporte: 'Deporte') -> None:
@@ -16,6 +17,10 @@ class Pista(ABC):
     @property
     def id_pista(self)->str:
         return self._id_pista
+
+    @property
+    def deporte(self) -> 'Deporte':
+        return self._deporte
 
     @property
     def estado(self)->str:

@@ -1,23 +1,22 @@
+from pista import Pista
+from usuario import Usuario
+
 class PrioridadException(Exception):
     """Excepción lanzada cuando la prioridad de un evento no está en el rango permitido."""
     pass
 
 class Evento:
-    # Representa una reserva concreta de una pista.
-    def __init__(self, id_evento: str, pista: 'Pista', usuario: 'Usuario', hora: str, num_jugadores: int, prioridad: int) -> None:
+
+    def __init__(self, id_evento: str, pista: 'Pista', usuario: 'Usuario', hora: str, num_jugadores: int,prioridad: int) -> None:
+
         # Validamos que el número de jugadores tenga sentido lógico
         if num_jugadores <= 0:
             raise ValueError(f"El número de jugadores debe ser mayor a 0. Se recibió: {num_jugadores}")
 
         # Validamos que la prioridad sea estrictamente 1 o 2 con nuestra excepción personalizada
         if prioridad not in (1, 2):
-            raise PrioridadException(f"La prioridad debe ser 1 (Liga/Alta) o 2 (Normal/Baja). Se r# Validamos que el número de jugadores tenga sentido lógico
-        if num_jugadores <= 0:
-            raise ValueError(f"El número de jugadores debe ser mayor a 0. Se recibió: {num_jugadores}")
-
-        # Validamos que la prioridad sea estrictamente 1 o 2 con nuestra excepción personalizada
-        if prioridad not in (1, 2):
-            raise PrioridadException(f"La prioridad debe ser 1 (Liga/Alta) o 2 (Normal/Baja). Se recibió: {prioridad}")ecibió: {prioridad}")
+            raise PrioridadException(
+                f"La prioridad debe ser 1 (Liga/Alta) o 2 (Normal/Baja). Se recibió: {prioridad}")
 
         self.id_evento: str = id_evento
         self.pista: 'Pista' = pista
@@ -36,5 +35,3 @@ class Evento:
     def __str__(self)->str:
         tipo:str = "LIGA" if self.prioridad == 1 else "NORMAL"
         return f"{tipo} | Hora: {self.hora} | Pista {self.pista.id_pista} | A nombre de: {self.usuario.nombre}"
-
-

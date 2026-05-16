@@ -55,7 +55,7 @@ class DeporteEquipo(Deporte):
 
 
 # Clase para deportes que no encajan en las categorías anteriores
-class Deporte_otro(Deporte):
+class DeporteOtro(Deporte):
     def __init__(self, nombre:str, min_jugadores:int)->None:
         super().__init__(nombre, min_jugadores)
 
